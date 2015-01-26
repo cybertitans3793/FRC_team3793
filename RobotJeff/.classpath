@@ -1,0 +1,10 @@
+<classpath>
+  <classpathentry kind="src" path="src"/>
+  <classpathentry kind="lib" path="C:/Users/Jeff/.eclipse/org.eclipse.platform_4.4.1_248562372_win32_win32_x86_64/plugins/edu.wpi.first.javadev.sunspotfrcsdk_1.0.7.1/sunspotfrcsdk/lib/WPILibJ/classes.jar"/>
+  <classpathentry kind="lib" path="C:/Users/Jeff/.eclipse/org.eclipse.platform_4.4.1_248562372_win32_win32_x86_64/plugins/edu.wpi.first.javadev.sunspotfrcsdk_1.0.7.1/sunspotfrcsdk/lib/squawk_device.jar"/>
+  <classpathentry kind="lib" path="C:/Users/Jeff/.eclipse/org.eclipse.platform_4.4.1_248562372_win32_win32_x86_64/plugins/edu.wpi.first.javadev.sunspotfrcsdk_1.0.7.1/sunspotfrcsdk/lib/WPILibJ/suite/WPILibJ_1.0.0.jar
+  <classpathentry kind="var" path="wpilib" sourcepath="wpilib.sources"/>
+  <classpathentry kind="var" path="networktables" sourcepath="networktables.sources"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+  <classpathentry kind="output" path="bin"/>
+</classpath>
