@@ -1,8 +1,12 @@
 
 package org.usfirst.frc.team3793.robot;
 
+
+import javax.swing.JFrame;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 import org.usfirst.frc.team3793.robot.commands.*;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -13,7 +17,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class OI {
     private Joystick joy = new Joystick(0);
-
+	private JFrame frame;
+	private TeleopForm teleop = new TeleopForm();
+    
     public OI() {
     	// Put Some buttons on the SmartDashboard
         SmartDashboard.putData("Elevator Bottom", new SetElevatorSetpoint(0));
@@ -48,10 +54,17 @@ public class OI {
         r2.whenPressed(new Pickup());
         l1.whenPressed(new Place());
         l2.whenPressed(new Autonomous());
+        
+        //Substitute Teleop slider form
+        teleop.makeVisible(teleop);
     }
     
     public Joystick getJoystick() {
         return joy;
     }
+    public int getTeleopSlider() {
+    	return teleop.getSliderValue();
+    }
+    
 }
 

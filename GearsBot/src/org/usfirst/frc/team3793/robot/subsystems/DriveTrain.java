@@ -10,8 +10,11 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
 import org.usfirst.frc.team3793.robot.Robot;
+import org.usfirst.frc.team3793.robot.TeleopForm;
 import org.usfirst.frc.team3793.robot.commands.TankDriveWithJoystick;
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -99,6 +102,10 @@ public class DriveTrain extends Subsystem {
 	 */
 	public void drive(Joystick joy) {
 		drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
+	}
+	
+	public void drive(int a) {
+		drive((50 - a)/50,((50 - a)/50));
 	}
 
 	/**
