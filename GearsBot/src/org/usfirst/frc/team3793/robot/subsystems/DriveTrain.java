@@ -104,8 +104,28 @@ public class DriveTrain extends Subsystem {
 		drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
 	}
 	
-	public void drive(int a) {
-		drive((50 - a)/50,((50 - a)/50));
+	public void drive(int x,int y) {
+		double driveR;
+		double driveL;
+		boolean lButtonPressed = Robot.oi.leftButtonPressed();
+		boolean rButtonPressed = Robot.oi.rightButtonPressed();
+		driveR = (x-50.0)/50.0;
+		driveL = (y-50.0)/50.0;
+		Robot.oi.dispTeleopSliderVal(driveR);
+		System.out.println(lButtonPressed ? "left true":"left false");
+		System.out.println(rButtonPressed ? "right true" : "right false");
+		if (lButtonPressed==true && rButtonPressed==false) {
+			drive(-driveL,driveR);
+			System.out.println("1");
+		}
+		else if (lButtonPressed==false && rButtonPressed==true) {
+			drive(driveL,-driveR);
+			System.out.println("2");
+		}
+		else {
+			drive(driveL,driveR);
+			System.out.println("3");
+		}
 	}
 
 	/**

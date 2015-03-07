@@ -11,6 +11,8 @@ import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 
 public class TeleopForm {
+	private static boolean haveLeftButtonPushed;
+	private static boolean haveRightButtonPushed;
 	private JFrame frame;
 	private final JButton rButton = new JButton(">>>");
 	private final JButton lButton = new JButton("<<<");
@@ -38,6 +40,8 @@ public class TeleopForm {
 		lButton.setBounds(166, 200, 80, 40);
 		lButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				haveLeftButtonPushed = !haveLeftButtonPushed;
+				lLabel.setText(Boolean.toString(haveLeftButtonPushed));				
 			}
 		});
 		frame.getContentPane().setLayout(null);
@@ -52,6 +56,8 @@ public class TeleopForm {
 		frame.getContentPane().add(slider);
 		rButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				haveRightButtonPushed = !haveRightButtonPushed;
+				rLabel.setText(Boolean.toString(haveRightButtonPushed));
 			}
 		});
 		rLabel.setBounds(498, 0, 166, 636);
@@ -66,8 +72,7 @@ public class TeleopForm {
 	
 	public int getSliderValue() {
 		int a;
-		a = slider.getValue();
-		sliderLabel.setText(Integer.toString(a));
+		a = slider.getValue();		
 		return a;
 	}
 	public JButton getLeftButton() {
@@ -79,6 +84,15 @@ public class TeleopForm {
 	public void makeVisible(TeleopForm a) {
 		a.frame.setVisible(true);
 	}
+	public void dispSliderVal(double a) {
+		sliderLabel.setText(Double.toString(a));
+	}
+	public boolean rightButtonPressed () {
+		return haveRightButtonPushed;
+	}
+	public boolean leftButtonPressed () {
+		return haveLeftButtonPushed;
+	}	
 }
 
 

@@ -2,6 +2,7 @@
 package org.usfirst.frc.team3793.robot;
 
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -65,6 +66,14 @@ public class OI {
     public int getTeleopSlider() {
     	return teleop.getSliderValue();
     }
-    
+    public void dispTeleopSliderVal(double a) {
+    	teleop.dispSliderVal(a);
+    }
+    public boolean rightButtonPressed() {
+    	return teleop.rightButtonPressed();
+    }
+    public boolean leftButtonPressed() {
+    	return teleop.leftButtonPressed();
+    }
 }
 
