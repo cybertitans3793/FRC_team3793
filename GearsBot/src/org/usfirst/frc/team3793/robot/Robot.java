@@ -7,7 +7,7 @@
 
 package org.usfirst.frc.team3793.robot;
 
-import javax.swing.JFrame;
+
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -37,7 +37,6 @@ public class Robot extends IterativeRobot {
     public static Wrist wrist;
     public static Claw claw;
     public static OI oi;
-    private JFrame frame;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.

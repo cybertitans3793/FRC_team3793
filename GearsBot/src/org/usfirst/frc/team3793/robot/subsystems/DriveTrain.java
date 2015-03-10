@@ -104,28 +104,21 @@ public class DriveTrain extends Subsystem {
 		drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
 	}
 	
-	public void drive(int x,int y) {
+	public void drive(int throttleVal,int steerVal) {
 		double driveR;
 		double driveL;
-		boolean lButtonPressed = Robot.oi.leftButtonPressed();
-		boolean rButtonPressed = Robot.oi.rightButtonPressed();
-		driveR = (x-50.0)/50.0;
-		driveL = (y-50.0)/50.0;
-		Robot.oi.dispTeleopSliderVal(driveR);
-		System.out.println(lButtonPressed ? "left true":"left false");
-		System.out.println(rButtonPressed ? "right true" : "right false");
-		if (lButtonPressed==true && rButtonPressed==false) {
-			drive(-driveL,driveR);
-			System.out.println("1");
-		}
-		else if (lButtonPressed==false && rButtonPressed==true) {
-			drive(driveL,-driveR);
-			System.out.println("2");
-		}
-		else {
-			drive(driveL,driveR);
-			System.out.println("3");
-		}
+		double steerAdjVal;
+//		boolean lButtonPressed = Robot.oi.leftButtonPressed();
+//		boolean rButtonPressed = Robot.oi.rightButtonPressed();
+		driveR = (throttleVal-50.0)/50.0;
+		driveL = (throttleVal-50.0)/50.0;
+		steerAdjVal = ((steerVal - 50.0)/50.0); 
+		Robot.oi.dispThrottleSliderVal(driveR);
+		Robot.oi.dispSteeringSliderVal(steerAdjVal);
+//		System.out.println(Double.toString((driveL-steerAdjVal)/2.0));
+//		System.out.println(Double.toString((driveR+steerAdjVal)/2.0));
+		drive((driveL)+(steerAdjVal),(driveR)+(-steerAdjVal));
+		dispRate();
 	}
 
 	/**
@@ -150,7 +143,10 @@ public class DriveTrain extends Subsystem {
 	public double getDistance() {
 		return (left_encoder.getDistance() + right_encoder.getDistance())/2;
 	}
-	
+	public void dispRate() {
+		Robot.oi.dispLeftVal(left_encoder.getRate());
+		Robot.oi.dispRightVal(right_encoder.getRate());
+	}
 	/**
 	 * @return The distance to the obstacle detected by the rangefinder. 
 	 */

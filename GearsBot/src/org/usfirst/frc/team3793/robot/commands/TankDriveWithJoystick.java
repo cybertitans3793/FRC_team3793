@@ -20,8 +20,12 @@ public class TankDriveWithJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	int throttleVal;
+    	int steerVal;
     //    Robot.drivetrain.drive(Robot.oi.getJoystick());
-        Robot.drivetrain.drive(Robot.oi.getTeleopSlider(),Robot.oi.getTeleopSlider());
+    	throttleVal = Robot.oi.getThrottleSlider();
+    	steerVal =  Robot.oi.getSteeringSlider();
+        Robot.drivetrain.drive(throttleVal,steerVal);
     	
     }
 

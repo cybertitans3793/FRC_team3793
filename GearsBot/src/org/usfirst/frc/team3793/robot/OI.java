@@ -2,9 +2,6 @@
 package org.usfirst.frc.team3793.robot;
 
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -18,7 +15,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class OI {
     private Joystick joy = new Joystick(0);
-	private JFrame frame;
 	private TeleopForm teleop = new TeleopForm();
     
     public OI() {
@@ -63,12 +59,24 @@ public class OI {
     public Joystick getJoystick() {
         return joy;
     }
-    public int getTeleopSlider() {
-    	return teleop.getSliderValue();
+    public int getThrottleSlider() {
+    	return teleop.getthrottleSliderValue();
     }
-    public void dispTeleopSliderVal(double a) {
-    	teleop.dispSliderVal(a);
+    public int getSteeringSlider() {
+    	return teleop.getSteeringSliderValue();
     }
+    public void dispThrottleSliderVal(double a) {
+    	teleop.dispthrottleSliderVal(a);
+    }
+    public void dispSteeringSliderVal(double a) {
+    	teleop.dispSteeringSliderVal(a);
+    }
+    public void dispRightVal(double a) {
+    	teleop.dispRightVal(a);
+    }
+    public void dispLeftVal(double a) {
+    	teleop.dispLeftVal(a);
+    }    
     public boolean rightButtonPressed() {
     	return teleop.rightButtonPressed();
     }
