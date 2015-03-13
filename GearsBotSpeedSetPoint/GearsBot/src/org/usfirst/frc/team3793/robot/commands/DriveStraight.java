@@ -19,10 +19,13 @@ import org.usfirst.frc.team3793.robot.Robot;
  */
 public class DriveStraight extends Command {
     private PIDController pid;
+    private double kf = 2.0;
+    private double ki = 10.0;
+    private double sf = 1.0;
     
     public DriveStraight(double velocity) {
         requires(Robot.drivetrain);
-        pid = new PIDController(0, 4, 0,70,
+        pid = new PIDController(0, ki, 0, kf,
                 new PIDSource() { public double pidGet() {
                     return Robot.drivetrain.getDistance();
                 }},
@@ -30,7 +33,7 @@ public class DriveStraight extends Command {
                     Robot.drivetrain.drive(d, d);
                 }});
         pid.setAbsoluteTolerance(0.01);
-        pid.setSetpoint(70.0*velocity);
+        pid.setSetpoint(sf*velocity);
     }
 
     // Called just before this Command runs the first time
@@ -57,7 +60,7 @@ public class DriveStraight extends Command {
     }
 
     public void setpoint(double a) {
-    	pid.setSetpoint(a);
+    	pid.setSetpoint(sf*a);
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run

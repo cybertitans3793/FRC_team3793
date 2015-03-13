@@ -148,6 +148,7 @@ public class DriveTrain extends Subsystem {
 	public void dispRate() {
 		Robot.oi.dispLeftVal(left_encoder.getRate());
 		Robot.oi.dispRightVal(right_encoder.getRate());
+		System.out.println(Double.toString(left_encoder.getRate()-right_encoder.getRate()));
 	}
 	/**
 	 * @return The distance to the obstacle detected by the rangefinder. 

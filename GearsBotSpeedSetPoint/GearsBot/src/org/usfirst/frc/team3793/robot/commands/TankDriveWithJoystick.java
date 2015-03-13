@@ -6,18 +6,23 @@ package org.usfirst.frc.team3793.robot.commands;
 
 import org.usfirst.frc.team3793.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
-
+import org.usfirst.frc.team3793.robot.commands.DriveStraight;
+ 
 /**
  * Have the robot drive tank style using the PS3 Joystick until interrupted.
  */
 public class TankDriveWithJoystick extends Command {
+	
+	private DriveStraight drivestraight;
     public TankDriveWithJoystick() {
         requires(Robot.drivetrain);
-        new DriveStraight(0.0);
+        drivestraight = new DriveStraight(0.0);
     }
 
     // Called just before this Command runs the f iirst time
-    protected void initialize() {}
+    protected void initialize() {
+    	
+    }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -28,10 +33,17 @@ public class TankDriveWithJoystick extends Command {
     	throttleVal = Robot.oi.getThrottleSlider();
     	steerVal =  Robot.oi.getSteeringSlider();
     	drive = (throttleVal-50.0)/50.0;
-    	if (steerVal == 50) {
-    		new DriveStraight(drive);
+    	if ((steerVal == 50) && (throttleVal != 50)) {
+    		drivestraight.setpoint(drive);
+    		Robot.drivetrain.dispRate();					//Drive the robot straight
+    	} else if ((steerVal ==50) && (throttleVal == 50)) {
+    		drivestraight.setpoint(0.0);							//Stop the robot moving
+    		Robot.drivetrain.drive(throttleVal,steerVal);
+    		drivestraight.initialize();
     	}
-   		Robot.drivetrain.drive(throttleVal,steerVal);
+    	else {
+    		Robot.drivetrain.drive(throttleVal,steerVal);		//Turn the robot
+    	}
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
