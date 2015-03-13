@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team3793.robot.Robot;
 import org.usfirst.frc.team3793.robot.commands.TankDriveWithJoystick;
-import org.usfirst.frc.team3793.robot.commands.DriveStraight;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -145,6 +144,14 @@ public class DriveTrain extends Subsystem {
 	public double getDistance() {
 		return (left_encoder.getDistance() + right_encoder.getDistance())/2;
 	}
+	public double getRateLeft() {
+		return left_encoder.getRate();
+		
+	}
+	public double getRateRight() {
+		return right_encoder.getRate();
+		
+	}	
 	public void dispRate() {
 		Robot.oi.dispLeftVal(left_encoder.getRate());
 		Robot.oi.dispRightVal(right_encoder.getRate());
