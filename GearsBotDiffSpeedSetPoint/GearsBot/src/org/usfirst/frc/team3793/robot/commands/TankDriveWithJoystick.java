@@ -41,7 +41,7 @@ public class TankDriveWithJoystick extends Command {
     		Robot.drivetrain.drive(throttleVal,steerVal);
     		drivestraight.initialize();
     	}
-    	else {
+    	else { 
     		drivestraight.initialize();
     		Robot.drivetrain.drive(throttleVal,steerVal);
     	}

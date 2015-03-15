@@ -29,6 +29,7 @@ public class DriveTrain extends Subsystem {
 	private Encoder left_encoder, right_encoder;
 	private AnalogInput rangefinder;
 	private Gyro gyro;
+	private double missAlignmentFactor = 1.2;  
 
 	public DriveTrain() {
 		super();
@@ -121,7 +122,7 @@ public class DriveTrain extends Subsystem {
 		Robot.oi.dispSteeringSliderVal(steerAdjVal);
 //		System.out.println(Double.toString((driveL-steerAdjVal)/2.0));
 //		System.out.println(Double.toString((driveR+steerAdjVal)/2.0));
-		drive((driveL)+(steerAdjVal),(driveR)+(-steerAdjVal));
+		drive((driveL)+(steerAdjVal),missAlignmentFactor*(driveR)+(-steerAdjVal));
 		dispRate();
 	}
 

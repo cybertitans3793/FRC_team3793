@@ -19,13 +19,14 @@ import org.usfirst.frc.team3793.robot.Robot;
  */
 public class DriveStraight extends Command {
     private PIDController pid;
-    private double kf = 0.1;
-    private double ki = 0.1;
+    private double kf = 0.0;
+    private double kp = 0.0;
+    private double ki = 0.01;
     private double sf = 0.1;
     
     public DriveStraight(double velocity_skew) {
         requires(Robot.drivetrain);
-        pid = new PIDController(0, ki, 0, kf,
+        pid = new PIDController(kp, ki, 0, kf,
                 new PIDSource() { public double pidGet() {
                     return (Robot.drivetrain.getRateRight() - Robot.drivetrain.getRateLeft());
                 }},
