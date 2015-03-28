@@ -26,7 +26,9 @@ CTRobot.yml			This RobotBuilder project is my interpretation of the
 				I can see the possibility of merging this with the
 				GearsBotDiffSpeedSetPoint project for the cometition.
 				
-				*** Legal Disclaimer ***
+gitupdate			Script to update or sync a repository
+				
+	*** Legal Disclaimer ***
 Use at your own risk!  Even though this is public domain, I do not guarantee the 
 performance of the code and cannot be responsble for any damage or injury caused
 by the code.  The purpose of this code is to support FIRST FRC team3793 programming
