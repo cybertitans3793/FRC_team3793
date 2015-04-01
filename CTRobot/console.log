@@ -1,0 +1,150 @@
+Buildfile: /home/jeff/workspace/CTRobot/build.xml
+Trying to override old definition of task classloader
+compile:
+     [echo] [athena-compile] Compiling src with classpath=/home/jeff/wpilib/java/current/lib/WPILib.jar:/home/jeff/wpilib/java/current/lib/NetworkTables.jar to build
+    [javac] Compiling 9 source files to /home/jeff/workspace/CTRobot/build
+jar-for-simulation:
+     [echo] [jar-for-simulation] Building jar.
+      [jar] Building jar: /home/jeff/workspace/CTRobot/dist/FRCUserProgramSim.jar
+simulate:
+     [echo] [simulate] Running Gazebo.
+     [echo] [simulate] Running DriverStation.
+     [echo] [simulate] Running Code.
+     [java] INFO|net.java.games.input.DefaultControllerEnvironment: Loading: net.java.games.input.LinuxEnvironmentPlugin
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event0): Failed to open device /dev/input/event0 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event1): Failed to open device /dev/input/event1 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event10): Failed to open device /dev/input/event10 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event11): Failed to open device /dev/input/event11 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event12): Failed to open device /dev/input/event12 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event2): Failed to open device /dev/input/event2 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event3): Failed to open device /dev/input/event3 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event4): Failed to open device /dev/input/event4 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event5): Failed to open device /dev/input/event5 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event6): Failed to open device /dev/input/event6 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event7): Failed to open device /dev/input/event7 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event8): Failed to open device /dev/input/event8 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Failed to open device (/dev/input/event9): Failed to open device /dev/input/event9 (13)
+     [java] INFO|net.java.games.input.ControllerEnvironment: Linux plugin claims to have found 1 controllers
+     [java] Failed to initialize simulator/dio/2/3: does the encoder exist?
+     [java] NOTE|WPILibJSim: Encoder.setDistancePerPulse() assumes 360 pulses per revolution in simulation.
+     [java] NOTE|WPILibJSim: Encoder.setDistancePerPulse() assumes 360 pulses per revolution in simulation.
+     [java] Failed to initialize simulator/dio/4/5: does the encoder exist?
+     [java] NOTE|WPILibJSim: Encoder.setDistancePerPulse() assumes 360 pulses per revolution in simulation.
+     [java] NOTE|WPILibJSim: Encoder.setDistancePerPulse() assumes 360 pulses per revolution in simulation.
+     [java] java.lang.NoClassDefFoundError: edu/wpi/first/wpilibj/Compressor
+     [java] 	at org.usfirst.frc3793.CTRobot.RobotMap.init(RobotMap.java:66)
+     [java] 	at org.usfirst.frc3793.CTRobot.Robot.robotInit(Robot.java:47)
+     [java] 	at edu.wpi.first.wpilibj.IterativeRobot.startCompetition(IterativeRobot.java:64)
+     [java] 	at edu.wpi.first.wpilibj.RobotBase.main(RobotBase.java:193)
+     [java] Caused by: java.lang.ClassNotFoundException: edu.wpi.first.wpilibj.Compressor
+     [java] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:372)
+     [java] 	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+     [java] 	at java.security.AccessController.doPrivileged(Native Method)
+     [java] 	at java.net.URLClassLoader.findClass(URLClassLoader.java:360)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+     [java] 	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+     [java] 	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+     [java] 	... 4 more
+     [java] WARNING: Robots don't quit!
+     [java] ---> The startCompetition() method (or methods called by it) should have handled the exception above.
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle unadvertise
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Ignoring unsubscribe: topic: "/gazebo/frc/simulator/pwm/1"
+     [java] host: "10.0.0.6"
+     [java] port: 33752
+     [java] msg_type: "gazebo.msgs.Float64"
+     [java] latching: false
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle unadvertise
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] WARNING|Gazebo Transport: Can't handle publisher_del
+     [java] SEVERE|Gazebo Transport: Only read -1 bytes instead of 8 for header.
+     [java] SEVERE|Gazebo Transport: Only read -1 bytes instead of 8 for header.
+     [java] SEVERE|Gazebo Transport: Received null packet, shutting down connection to master.
+     [java] SEVERE|Gazebo Transport: Only read -1 bytes instead of 8 for header.
+     [java] SEVERE|Gazebo Transport: Only read -1 bytes instead of 8 for header.
+     [java] SEVERE|Gazebo Transport: Only read -1 bytes instead of 8 for header.
+     [java] SEVERE|Gazebo Transport: Only read -1 bytes instead of 8 for header.
+     [java] SEVERE|Gazebo Transport: Received null packet, shutting down connection to master.
+     [exec] Result: 255
+
