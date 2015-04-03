@@ -66,19 +66,16 @@ public class OI {
         driveJoystick = new Joystick(0);
         
         toteGrabberClose = new JoystickButton(driveJoystick,2);
-        toteGrabberClose.whileHeld(new CloseGrabber());
         toteGrabberOpen = new JoystickButton(driveJoystick,1);
-        toteGrabberOpen.whenPressed(new OpenGrabber());
-
 	    
         // SmartDashboard Buttons
         SmartDashboard.putData("AutonomousCommand", new AutonomousCommand());
 
         SmartDashboard.putData("MoveRobot", new MoveRobot());
 
- //       SmartDashboard.putData("LowerPulley", new LowerPulley());
+        SmartDashboard.putData("LowerPulley", new LowerPulley());
 
- //       SmartDashboard.putData("LiftPulley", new LiftPulley());
+        SmartDashboard.putData("LiftPulley", new LiftPulley());
 
         SmartDashboard.putData("DriveStraight", new DriveStraight(0.0));
 
@@ -86,7 +83,7 @@ public class OI {
 
         SmartDashboard.putData("AutoMoveForward", new AutoMoveForward(20.0));
 
-        SmartDashboard.putData("CloseGrabber", new CloseGrabber());
+   //     SmartDashboard.putData("CloseGrabber", new CloseGrabber());
 
         SmartDashboard.putData("OpenGrabber", new OpenGrabber());
 
