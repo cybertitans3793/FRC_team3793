@@ -12,6 +12,7 @@
 package org.usfirst.frc3793.CTRobot.subsystems;
 
 import org.usfirst.frc3793.CTRobot.RobotMap;
+import org.usfirst.frc3793.CTRobot.RobotDefines;
 import org.usfirst.frc3793.CTRobot.commands.*;
 
 import edu.wpi.first.wpilibj.*;
@@ -85,22 +86,22 @@ public class DriveTrain extends Subsystem {
 	 * @param left Speed in range [-1,1]
 	 * @param right Speed in range [-1,1]
 	 */
-	public void drive(double left, double right) {
+/*	public void drive(double left, double right) {
 		drive.tankDrive(left, right);
-	}
-	public void drive(double left) {
-		double thr = 0.2;           //TODO: Replace with reading joystick (Robot.oi.getThrottleSlider()-50.0)/50.0;
+	} */
+//	public void drive(double left) {
+//		double thr = 0.2;           //TODO: Replace with reading joystick (Robot.oi.getThrottleSlider()-50.0)/50.0;
 		
-		drive.tankDrive(thr,thr+left);
-	}
+//		drive.tankDrive(thr,thr+left);
+//	} 
 	/**
 	 * @param joy The ps3 style joystick to use to drive tank style.
 	 */
-	public void drive(Joystick joy) {
+/*	public void driveAxis(Joystick joy) {
 		drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
-	}
-	
-	public void drive(int throttleVal,int steerVal) {
+	} */
+/*	
+	public void drive(double throttleVal,double steerVal) {
 		double driveR;
 		double driveL;
 		double steerAdjVal;
@@ -113,9 +114,13 @@ public class DriveTrain extends Subsystem {
 //		Robot.oi.dispSteeringSliderVal(steerAdjVal);
 //		System.out.println(Double.toString((driveL-steerAdjVal)/2.0));
 //		System.out.println(Double.toString((driveR+steerAdjVal)/2.0));
-		drive((driveL)+(steerAdjVal),missAlignmentFactor*(driveR)+(-steerAdjVal));
+//		drive((driveL)+(steerAdjVal),missAlignmentFactor*(driveR)+(-steerAdjVal));
+ 
 	}
-
+*/
+    public void driveT (double outputMagnitude, double curve) {
+    	drive.drive(outputMagnitude, curve);
+    }
 	/**
 	 * @return The robots heading in degrees.
 	 */

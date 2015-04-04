@@ -39,5 +39,10 @@ public class Pulley extends Subsystem {
         
         
     }
+    public void activateLift(double speed) {
+    	
+    	
+    }
+    
 }
 

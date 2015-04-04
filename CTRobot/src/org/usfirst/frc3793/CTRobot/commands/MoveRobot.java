@@ -44,12 +44,12 @@ public class  MoveRobot extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
- //   	Robot.driveTrain.drive(Robot.oi.joystickMove.getX(), Robot.oi.joystickMove.getY());
+ //   	Robot.driverain.drive(Robot.oi.joystickMove.getX(), Robot.oi.joystickMove.getY());
  	double dif = Robot.oi.driveJoystick.getRawAxis(3)-Robot.oi.driveJoystick.getRawAxis(2);
     	double turn = Robot.oi.driveJoystick.getRawAxis(0);
     	dif = Robot.oi.scale(dif, 0.2);
     	turn = Robot.oi.scale(turn, 0.2);
-    	Robot.driveTrain.drive(RobotDefines.cDriveCoefficient*dif, RobotDefines.cTurnCoefficient*turn);
+    	Robot.driveTrain.driveT(RobotDefines.cDriveCoefficient*dif, RobotDefines.cTurnCoefficient*turn);
     	
     	System.out.println("..");
     }
