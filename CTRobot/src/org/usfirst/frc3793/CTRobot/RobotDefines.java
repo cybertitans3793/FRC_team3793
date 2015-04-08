@@ -1,7 +1,7 @@
 package org.usfirst.frc3793.CTRobot;
 
 public class RobotDefines {
-	public static final boolean simulation = true;
+	public static final boolean simulation = false;
 	public static final boolean debug = true;
 	public static final double  cEncPulseDist = 0.0349;
 	public static final double  cEncPulseDistSim = 0.042;

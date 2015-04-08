@@ -73,9 +73,7 @@ public class OI {
 
         SmartDashboard.putData("MoveRobot", new MoveRobot());
 
-        SmartDashboard.putData("LowerPulley", new LowerPulley());
-
-        SmartDashboard.putData("LiftPulley", new LiftPulley());
+ //       SmartDashboard.putData("LowerPulley", new OperateLift());
 
         SmartDashboard.putData("DriveStraight", new DriveStraight(0.0));
 
@@ -83,9 +81,7 @@ public class OI {
 
         SmartDashboard.putData("AutoMoveForward", new AutoMoveForward(20.0));
 
-   //     SmartDashboard.putData("CloseGrabber", new CloseGrabber());
-
-        SmartDashboard.putData("OpenGrabber", new OpenGrabber());
+ //       SmartDashboard.putData("OpenGrabber", new OperateGrabber());
 
 
 

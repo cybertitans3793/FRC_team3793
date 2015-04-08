@@ -42,9 +42,9 @@ public class  DriveStraight extends Command {
                     return (Robot.driveTrain.getRateRight() - Robot.driveTrain.getRateLeft());
                 }},
                 new PIDOutput() { public void pidWrite(double d) {
-                    Robot.driveTrain.drive(d);
+                    Robot.driveTrain.drive(d,0.0);
                 }});
-        pid.setAbsoluteTolerance(0.01);
+        pid.setAbsoluteTolerance(0.1);
         pid.setSetpoint(sf*velocity_skew);
     }
     // Called just before this Command runs the first time
@@ -56,7 +56,8 @@ public class  DriveStraight extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    public void execute() {}
+    public void execute() {
+    }
 
     // Make this return true when this Command no longer needs to run execute()
     public boolean isFinished() {
@@ -67,7 +68,7 @@ public class  DriveStraight extends Command {
     public void end() {
     	// Stop PID and the wheels
     	pid.disable();
-        Robot.driveTrain.drive(0, 0);
+        Robot.driveTrain.drive(0.0, 0.0);
     }
 
     public void setpoint(double a) {

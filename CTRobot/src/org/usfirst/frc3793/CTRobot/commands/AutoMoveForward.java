@@ -70,10 +70,6 @@ public class  AutoMoveForward extends PIDCommand {
     	getPIDController().reset();
     	usePIDOutput(0.2);
     	System.out.println("Autonomous Encoder Angular Displacement");
-        if(RobotDefines.simulation==true) {
-        	RobotMap.driveTrainWheelLR.set(0.2);
-        	RobotMap.driveTrainWheelRR.set(-0.2);
-        }    	
     	getPIDController().enable();
     }
 
@@ -90,10 +86,6 @@ public class  AutoMoveForward extends PIDCommand {
     protected void end() {
     	usePIDOutput(0.0);
     	System.out.println("Done Autonomous");
-        if(RobotDefines.simulation==true) {
-        	RobotMap.driveTrainWheelLR.set(0.0);
-        	RobotMap.driveTrainWheelRR.set(0.0);
-        }
     	getPIDController().disable();
     	
     }

@@ -24,8 +24,6 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc3793.CTRobot.commands.MoveRobot;
 
-//import org.usfirst.frc.team3793.robot.;
-
 
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -54,10 +52,9 @@ public class DriveTrain extends Subsystem {
 
 	
 	
-//	if (RobotDefines.simulation == true) {
+//	if (RobotDefines.simulation == true) {}
 		private double missAlignmentFactor = 1.0;
-//	} else {
-//		private double missAlignmentFactor = 1.0;
+//	} else  {//		private double missAlignmentFactor = 1.0;
 //	}
 	
 
@@ -86,53 +83,29 @@ public class DriveTrain extends Subsystem {
 	 * @param left Speed in range [-1,1]
 	 * @param right Speed in range [-1,1]
 	 */
-/*	public void drive(double left, double right) {
-		drive.tankDrive(left, right);
-	} */
-//	public void drive(double left) {
-//		double thr = 0.2;           //TODO: Replace with reading joystick (Robot.oi.getThrottleSlider()-50.0)/50.0;
-		
-//		drive.tankDrive(thr,thr+left);
-//	} 
-	/**
-	 * @param joy The ps3 style joystick to use to drive tank style.
-	 */
-/*	public void driveAxis(Joystick joy) {
-		drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
-	} */
-/*	
-	public void drive(double throttleVal,double steerVal) {
-		double driveR;
-		double driveL;
-		double steerAdjVal;
-//		boolean lButtonPressed = Robot.oi.leftButtonPressed();
-//		boolean rButtonPressed = Robot.oi.rightButtonPressed();
-		driveR = (throttleVal-50.0)/50.0;
-		driveL = (throttleVal-50.0)/50.0;
-		steerAdjVal = ((steerVal - 50.0)/50.0); 
-//		Robot.oi.dispThrottleSliderVal(driveR);
-//		Robot.oi.dispSteeringSliderVal(steerAdjVal);
-//		System.out.println(Double.toString((driveL-steerAdjVal)/2.0));
-//		System.out.println(Double.toString((driveR+steerAdjVal)/2.0));
-//		drive((driveL)+(steerAdjVal),missAlignmentFactor*(driveR)+(-steerAdjVal));
- 
-	}
-*/
-    public void driveT (double outputMagnitude, double curve) {
-    	drive.drive(outputMagnitude, curve);
-    }
-	/**
+	
+   public void drive(double speed, double turn) {
+	   RobotMap.driveTrainRobotDrive01.drive(speed, turn);
+   }
+   
+    /**
 	 * @return The robots heading in degrees.
-	 */
-//	public double getHeading() {
-//		return gyro.getAngle();
-//	}
+	 */  
+/*	public double getHeading() {
+		if (RobotDefines.simulation == true) {			
+			return gyro.getAngle();
+		} else {
+			return 0.0;
+		}
+	} */
 
 	/**
 	 * Reset the robots sensors to the zero states.
 	 */
 	public void reset() {
-		gyro.reset();
+		if (RobotDefines.simulation == true) {
+			gyro.reset();
+		}
 		left_encoder.reset();
 		right_encoder.reset();
 	}
@@ -155,7 +128,7 @@ public class DriveTrain extends Subsystem {
 	 * @return The distance to the obstacle detected by the rangefinder. 
 	 */
 	public double getDistanceToObstacle() {
-		// Really meters in simulation since it's a rangefinder...
+		 // Really meters in simulation since it's a rangefinder...
 		return rangefinder.getAverageVoltage();
 	}
 }
